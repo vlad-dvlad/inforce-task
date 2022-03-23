@@ -1,0 +1,30 @@
+.searchBar {
+  display: flex;
+  flex-direction: column;;
+
+  &__container {
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+  }
+
+  &__input {
+    min-width: 300px;
+    padding: 5px;
+    border: 1px solid #0080ff;
+  }
+
+  &__suggestion {
+    display: block;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    padding: 3px;
+    border-right: 1px solid #939191;
+    border-left: 1px solid #939191;
+    border-bottom: 1px solid #939191;
+
+    &:hover {
+      background-color: #939191;
+    }
+  }
+}

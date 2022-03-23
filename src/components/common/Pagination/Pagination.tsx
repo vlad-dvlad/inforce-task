@@ -1,5 +1,5 @@
 import React, { FC, memo } from "react";
-import { createPages } from "../../helpers/createPages";
+import { createPages } from "../../../helpers/createPages";
 import s from "./pagination.module.scss";
 import classNames from "classnames/bind";
 

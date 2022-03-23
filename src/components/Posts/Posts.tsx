@@ -7,7 +7,8 @@ import { IPost } from "../../models/IPost";
 import s from "./posts.module.scss";
 
 import classNames from "classnames/bind";
-import Pagination from "../common/Pagination";
+import Pagination from "../common/Pagination/Pagination";
+import SearchBar from "../common/SearchBar/SearchBar";
 
 const cx = classNames.bind(s);
 
@@ -42,6 +43,7 @@ const Posts = () => {
 
   return (
     <div className={cx("posts", "posts__container")}>
+      <SearchBar posts={posts} />
       {postsContent}
       <Pagination
         pagesCount={pagesCount}
