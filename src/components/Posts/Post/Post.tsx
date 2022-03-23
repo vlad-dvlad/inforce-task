@@ -1,4 +1,4 @@
-import React, {FC, memo} from "react";
+import React, { FC, memo } from "react";
 import { IPost } from "../../../models/IPost";
 import s from "./post.module.scss";
 import classNames from "classnames/bind";
