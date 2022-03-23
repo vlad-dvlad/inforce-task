@@ -1,11 +1,15 @@
 // this helpers needs for save page num and get it
 export const savePage = (page: number) => {
-  localStorage.setItem("currentPage", page.toString());
+  sessionStorage.setItem("currentPage", page.toString());
 };
 
 export const getCurrentPage = () => {
-  if (localStorage.getItem("currentPage"))
-    return localStorage.getItem("currentPage");
+  if (sessionStorage.getItem("currentPage"))
+    return sessionStorage.getItem("currentPage");
 
   return null;
+};
+
+export const deletePage = () => {
+  sessionStorage.removeItem("currentPage");
 };

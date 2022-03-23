@@ -9,7 +9,7 @@ import s from "./posts.module.scss";
 import classNames from "classnames/bind";
 import Pagination from "../common/Pagination/Pagination";
 import SearchBar from "../common/SearchBar/SearchBar";
-import { getCurrentPage } from "../../helpers/pageHelper";
+import {deletePage, getCurrentPage} from "../../helpers/pageHelper";
 
 const cx = classNames.bind(s);
 
@@ -27,6 +27,10 @@ const Posts = () => {
 
   useEffect(() => {
     dispatch(fetchPosts(currentPage));
+
+    return () => {
+      deletePage();
+    }
   }, [currentPage]);
 
   if (!!posts) {
