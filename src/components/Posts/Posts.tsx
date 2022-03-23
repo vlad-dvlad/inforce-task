@@ -9,13 +9,19 @@ import s from "./posts.module.scss";
 import classNames from "classnames/bind";
 import Pagination from "../common/Pagination/Pagination";
 import SearchBar from "../common/SearchBar/SearchBar";
+import { getCurrentPage } from "../../helpers/pageHelper";
 
 const cx = classNames.bind(s);
 
 const Posts = () => {
   const dispatch = useAppDispatch();
-  const { posts, totalCount, error, isLoading } = useAppSelector(getPosts);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const { posts, totalCount } = useAppSelector(getPosts);
+  const [currentPage, setCurrentPage] = useState<number>(() => {
+    let page = getCurrentPage();
+    if (!!page) return +page;
+
+    return 1;
+  });
   const pagesCount = Math.ceil(totalCount / posts.length);
   let postsRows;
 
