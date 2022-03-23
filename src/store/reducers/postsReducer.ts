@@ -4,12 +4,14 @@ import { fetchPosts } from "./actionCreators/postActionCreators";
 
 interface PostsState {
   posts: IPost[];
+  totalCount: number;
   isLoading: boolean;
   error: string;
 }
 
 const initialState: PostsState = {
   posts: [],
+  totalCount: 100,
   isLoading: false,
   error: "",
 };
@@ -17,7 +19,9 @@ const initialState: PostsState = {
 export const postSlice = createSlice({
   name: "post",
   initialState,
-  reducers: {},
+  reducers: {
+
+  },
   extraReducers: {
     [fetchPosts.pending.type]: (state) => {
       state.isLoading = true;
