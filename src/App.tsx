@@ -1,22 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.scss";
-import { useAppDispatch, useAppSelector } from "./hooks/redux";
-import { getPosts } from "./store/selectors";
-import { fetchPosts } from "./store/reducers/actionCreators/postActionCreators";
+import Header from "./components/Header/Header";
+import Content from "./components/Content/Content";
 
 const App = () => {
-  const dispatch = useAppDispatch();
-  const { posts, error, isLoading } = useAppSelector(getPosts);
 
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, []);
 
   return (
     <div>
-      {posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
-      ))}
+      <Header />
+      <Content />
     </div>
   );
 };
