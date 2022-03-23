@@ -1,0 +1,17 @@
+.posts {
+  &__container {
+
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+}
